@@ -1,0 +1,14 @@
+---
+ - hosts: all
+   become: yes
+   become_user: root
+   max_fail_percentage: "10%"
+   serial: 
+    - "10%"
+    - "20%"
+    - "80%"
+   
+   roles:
+    - ansible-role-php
+    - ansible-role-apache
+    - ansible-role-mysql
